@@ -7,7 +7,7 @@
 * [Reference](#reference)
 
 ## Data
-the data used in the paper is [DSTC4](#http://www.colips.org/workshop/dstc4/)
+the data used in the paper is [DSTC4](http://www.colips.org/workshop/dstc4/)
 
 ## Reference
 
