@@ -1,6 +1,6 @@
 for f in ./*
 do
-  if [ "${f}" != "./run.sh" ]
+  if [[ "${f}" == *"row_"* ]]
   then
     cd $f
     rm -rf tourist_result.txt
@@ -8,9 +8,9 @@ do
     rm -rf all_result.txt
     for i in $(seq 1 1 5)
     do
-      python slu.py Tourist >> tourist_result.txt
-      python slu.py Guide >> guide_result.txt
-      python slu.py ALL >> all_result.txt
+      python2.7 slu.py Tourist >> tourist_result.txt
+      python2.7 slu.py Guide >> guide_result.txt
+      python2.7 slu.py ALL >> all_result.txt
     done
     cd ..
   fi

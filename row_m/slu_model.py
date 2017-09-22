@@ -90,10 +90,11 @@ class slu_model(object):
         concat_output = self.attention()
         history_summary = tf.layers.dense(inputs=concat_output, units=self.intent_dim, kernel_initializer=tf.random_normal_initializer, bias_initializer=tf.random_normal_initializer)
         final_output = self.nl_biRNN(history_summary)
-        self.intent_output = tf.layers.dense(inputs=final_output, units=self.intent_dim, kernel_initializer=tf.random_normal_initializer, bias_initializer=tf.random_normal_initializer)
+        self.output = tf.layers.dense(inputs=final_output, units=self.intent_dim, kernel_initializer=tf.random_normal_initializer, bias_initializer=tf.random_normal_initializer)
+        self.intent_output = tf.sigmoid(self.output)
 
     def add_loss(self):
-        self.loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=self.labels, logits=self.intent_output))
+        self.loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=self.labels, logits=self.output))
         
     def add_train_op(self):
         optimizer = tf.train.AdamOptimizer(learning_rate=1e-3)

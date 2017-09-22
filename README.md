@@ -14,10 +14,10 @@ Tensorflow ver1.2 CUDNN ver5.1
 Python 2.7
 
 ## Usage
-Change the path in **slu\_preprocess.py** line 29 to your custom GloVe file path.
-**Note that user should add a 200 dims 0.0 at the end of the GloVe file.**
-`bash run.sh` will reproduce log files for every entry in table 1.
-`python2.7 calculate.py` will calculate the average of log files for each entry in Table 1.
+* Change the path in **slu\_preprocess.py** line 29 to your custom GloVe file path.
+* **Note that user should add a 200 dims 0.0 at the end of the GloVe file.**
+* `bash run.sh` will reproduce log files for every entry in table 1.
+* `python2.7 calculate.py` will calculate the average of log files for each entry in Table 1.
 
 ## Reference
 
