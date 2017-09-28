@@ -7,7 +7,7 @@ class slu_model(object):
         self.hidden_size = 128
         self.intent_dim = intent_dim # one hot encoding
         self.embedding_dim = 200 # read from glove
-        self.total_word = 400002 # total word embedding vectors
+        self.total_word = 400001 # total word embedding vectors
         self.max_seq_len = max_seq_len
         self.hist_len = 3
         self.add_variables()
